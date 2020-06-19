@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
-	<style type="text/css">
-		.st0{fill:#0A0A0A;}
-		.st1{fill:#333333;}
-		.st2{fill:#FFA412;}
-		.st3{fill:#FFDA00;}
-		.st4{fill:#D1D1D1;}
-		.st5{fill:#AFAFAF;}
-	</style>
-	<g>
-		<circle class="st0" cx="32" cy="32" r="32"/>
-		<g>
-			<path class="st0" d="M64,32c0,17.7-14.3,32-32,32C19.2,64,8.2,56.5,3.1,45.7l56.5-30C62.4,20.5,64,26,64,32z"/>
-			<path class="st1" d="M59.5,15.7l-56.5,30C1.1,41.6,0,36.9,0,32C0,14.3,14.3,0,32,0C43.7,0,54,6.3,59.5,15.7z"/>
-		</g>
-		<g>
-			<polygon class="st2" points="46,27.8 33.4,44 26.2,53.1 28.9,43.8 31.8,33.5 26.1,33.5 36.8,27.8 		"/>
-			<polygon class="st3" points="36.8,27.8 26.1,33.5 18,33.5 29.3,18.3 34.7,10.9 33.5,18.4 32,27.8 		"/>
-		</g>
-		<g>
-			<path class="st4" d="M14.8,35.1h8.3l-8.5,4.5c-4.6-8.3-8-15.8-8.8-20c6.8-0.9,13.9-1.4,21.4-1.4L16.7,32.5L14.8,35.1z"/>
-			<path class="st4" d="M48.5,21.6l-8.8,4.7h-5.9l1.2-7.7c3.9,0.2,8,0.6,12.2,1.1C47.7,20.3,48.1,20.9,48.5,21.6z"/>
-			<path class="st5" d="M58.2,43.1c-6,0.9-13.7,1.2-22.8,1l11.9-15.2l2-2.6h-9.5l8.8-4.7C52.4,27.6,55.6,34.7,58.2,43.1z"/>
-			<path class="st5" d="M29.7,35.1l-2.5,8.6c-3.4-0.2-6.9-0.4-10.6-0.6c-0.7-1.2-1.4-2.3-2-3.5l8.5-4.5H29.7z"/>
-		</g>
-	</g>
+	 width="128px" height="128px" viewBox="64 64 128 128" enable-background="new 64 64 128 128" xml:space="preserve">
+<g>
+	<circle vector-effect="non-scaling-stroke" fill="#515151" cx="128" cy="128" r="64"/>
+	<path fill="#FFC200" d="M151.652,80.114L99.835,132.22l22.947,1.806l-23.461,41.86l57.358-52.587l-29.989-1.97L151.652,80.114z"/>
+</g>
 </svg>
