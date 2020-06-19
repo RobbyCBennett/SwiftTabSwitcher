@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Swift Tab Switcher</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/x-icon" href="icon16.png">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+	<div id="nav">
+		<img src="icon.svg" width="48px" height="48px">
+
+		<h1>Swift Tab Switcher</h1>
+
+		<a href="options.html">
+			<h3 class="selected">OPTIONS</h3>
+		</a>
+
+		<a href="support.html">
+			<h3>SUPPORT</h3>
+		</a>
+
+		<a href="versions.html">
+			<h3>VERSIONS</h3>
+		</a>
+	</div>
+
+	<div id="body">
+
+		<h2>Options</h2>
+
+		<label>
+			<input type="checkbox" id="skip">
+			Skip to and from the first and last tabs.
+		</label>
+
+		<label>
+			<input type="checkbox" id="dual">
+			Enable dual window support.
+		</label>
+
+		<h3>
+			Keyboard shortcuts: click
+			<a href="#" id="extensionsLink">here</a>
+		 	and scroll to the bottom.
+		</h3>
+
+		<div id="saved">
+			<h3>
+				<img src="checkYellow.svg" width="16px" height="16px">
+				Options saved
+			</h3>
+		</div>
+	</div>
+	<script src="animateSaved.js"></script>
+	<script src="options.js"></script>
+</body>
+</html>
