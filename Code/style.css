@@ -206,7 +206,7 @@ header a:hover, .userIsUsingTab header a:focus {
 	height: 44px;
 	float: right;
 	background-color: transparent;
-	background-image: url(close.svg);
+	background-image: url(closeDark.svg);
 	transition-duration: 0.25s;
 	border-width: initial;
 	border-style: none;
@@ -215,4 +215,38 @@ header a:hover, .userIsUsingTab header a:focus {
 }
 .close:hover, .userIsUsingTab .close:focus {
 	background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+	h1, h2, h3, h4, h5, h6, p, label {
+		color: #DDD;
+	}
+
+	header, #banner, .box, input[type="checkbox"] {
+		background-color: #35363A;
+	}
+	body {
+		background-color: hsl(227, 4%, 20%);
+	}
+
+	input[type="checkbox"] {
+		border: 1.5px solid #DDD;
+	}
+	input[type="checkbox"]:hover, input[type="checkbox"]:checked {
+		border-color: #FFC200;
+	}
+	input[type="checkbox"]:checked {
+		background-color: #FFC200;
+		background-image: url(checkDark.svg);
+	}
+	.userIsUsingTab input[type="checkbox"]:focus::before {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+
+	.close {
+		background-image: url(closeWhite.svg);
+	}
 }
