@@ -177,7 +177,7 @@ header {
 header a:not(:first-child) {
 	margin-left: 50px;
 }
-header a:hover, .userIsUsingTab header a:focus {
+header a:hover h3, .userIsUsingTab header a:focus h3 {
 	color: #FFA412;
 }
 .horizontalScrolling {
@@ -229,7 +229,7 @@ header a:hover, .userIsUsingTab header a:focus {
 		background-color: #35363A;
 	}
 	body {
-		background-color: hsl(227, 4%, 20%);
+		background-color: #323336;
 	}
 
 	input[type="checkbox"] {
