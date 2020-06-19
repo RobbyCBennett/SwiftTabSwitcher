@@ -1,115 +1,218 @@
+/* Fixes */
+body {
+	user-select: none;
+}
+a:focus, input:focus {
+	outline: none;
+}
 * {
-    font-family: "Raleway", sans-serif;
-    margin: 0;
-    padding: 0;
-    color: black;
+	margin: 0;
+	padding: 0;
 }
 
-::selection {
-	color: inherit;
-}
 
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb {
+	background: #ffc200;
+	border-radius: 5px;
+}
+::-webkit-scrollbar-button {
+	background-color: transparent;
+	height: 0px;
+	width: 0px;
+}
 ::-webkit-scrollbar {
-	display: none;
+	background-color: transparent;
+	height: 5px;
+	width: 5px;
 }
 
-#nav  {
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
-    background-color: #EEE;
-}
 
-#body {
-	padding: 0 300px 300px 300px;
-}
 
-a {
-    text-decoration: none;
+/* General */
+body {
+	background-color: #FCFCFC;
+	color: #515151;
+	font-family: "Raleway", sans-serif;
+}
+.container {
+	padding-right: 25px;
+    padding-left: 25px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.box {
+	background-color: #FFF;
+    padding: 25px;
+    margin-top: 25px;
     display: inline-block;
+    text-align: left;
+    vertical-align: top;
+	width: calc(100% - 50px);
+}
+.box, header {
+	box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.1);
+}
+.split {
+	display: flex;
+	justify-content: space-between;
+}
+.fixedContainer {
+	width: 800px;
+}
+@media (min-width: 900px){
+	.container {
+		max-width: 750px;
+	}
+}
+a {
+	text-decoration: none;
+	display: inline-block;
+}
+a:hover {
+	transition: color 0.25s;
+}
+ipnut {
+	transition: background-color 0.25s;
+}
+section a:hover, #banner a:hover {
+	color: #FFC200;
+}
+.userIsUsingTab section a:focus, .userIsUsingTab #banner a:focus {
+	background-color: rgba(255, 194, 0, 0.25);
+}
+input {
+	transition: border-color 0.25s;
 }
 
-a h3:hover:not(.selected), #body a:hover {
-    color: #999;
+section a, header .selected, #saved, #banner a {
+	color: #FFA412;
 }
-
-.selected, #body a, #saved h3 {
-    color: #ffa412;
-}
-
 #saved {
 	opacity: 0;
 	transition-duration: 0.25s;
 }
-
-#nav a {
-    margin-left: 50px;
+#saved img {
+	margin-left: 25px;
+	margin-right: 20px;
 }
-
 h1, h2, h3 {
-    font-weight: normal;
+	font-weight: normal;
 }
-
-h1, #nav h3, img {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
+h1, header h3, img {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
 }
-
 h1 {
-    font-size: 3em;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    margin-left: 20px;
+	font-size: 3em;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	margin-left: 20px;
 }
-
 h2 {
-    font-size: 2em;
+	font-size: 2em;
 }
-
+h2:not(:first-child) {
+	margin-top: 2em;
+}
 h3, p {
-    font-size: 1.5em;
+	font-size: 1.5em;
 }
-
-#nav h3 {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
+header h3 {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
 }
-
-#body h2 {
-	margin-top: 45px;
+section p, section h3, section label {
+	margin-top: 15px;
 }
-
-#body p, #body h3, #body label {
-    margin-top: 15px;
-}
-
 label {
-	display: block;
-    font-size: 1.5em;
+	display: inline-block;
+	font-size: 1.5em;
+	line-height: 1.1em;
 }
-
 label input {
 	vertical-align: bottom;
 }
-
-input {
-    cursor: pointer;
+input, label {
+	cursor: pointer;
+}
+input[type="checkbox"] {
+	padding: 8px;
+	margin-right: 16px;
+	background-color: #FFF;
+	border: 1.5px solid #D6D6D6;
+	border-radius: 3px;
+	-webkit-appearance: none;
+	background-size: cover;
+}
+input[type="checkbox"]:hover, input[type="checkbox"]:checked {
+	border-color: #FFC200;
+}
+input[type="checkbox"]:checked {
+	background-color: #FFC200;
+	background-image: url(checkWhite.svg);
+}
+.userIsUsingTab input[type="checkbox"]:focus::before {
+	content: "";
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.04);
+	border-radius: 50%;
+	height: 32px;
+	width: 32px;
+	margin-left: -16px;
+	margin-top: -16px;
 }
 
-a:focus, input:focus {
-    outline: none;
+
+
+/* Header */
+header {
+	line-height: 70px;
+	background-color: #FFF;
+}
+header a:not(:first-child) {
+	margin-left: 50px;
+}
+header a:hover, .userIsUsingTab header a:focus {
+	color: #FFA412;
+}
+.horizontalScrolling {
+	width: 100%;
+	overflow: auto;
+	white-space: nowrap;
+	display: inline-block;
 }
 
-input {
-    margin-right: 15px;
-    background-color: #DDD;
-    -webkit-appearance: none;
-    padding: 10px;
-}
 
-input:checked {
-    background-image:url(check.svg);
+
+/* Banner */
+#banner {
+	background-color: #FFF;
+	width: 100%;
+	box-shadow: 0 6px 8px -4px rgba(0, 0, 0, 0.1);
+    margin-top: -3px;
+}
+#bannerMessage {
+	max-width: 90%;
+	margin: 10px 0;
+}
+.close {
+	background-size: cover;
+	width: 44px;
+	height: 44px;
+	float: right;
+	background-color: transparent;
+	background-image: url(close.svg);
+	transition-duration: 0.25s;
+	border-width: initial;
+	border-style: none;
+	border-color: initial;
+	border-image: initial;
+}
+.close:hover, .userIsUsingTab .close:focus {
+	background-color: rgba(0, 0, 0, 0.05);
 }

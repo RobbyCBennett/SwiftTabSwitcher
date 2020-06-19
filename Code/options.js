@@ -24,15 +24,17 @@ window.onload = function() {
     var options = document.getElementsByTagName("input");
     for (var i = 0; i < options.length; i++) {
         var optionElement = options[i];
-        optionElement.onclick = function() {
-            saveOptions();
-        }
+		if (!optionElement.classList.contains("close")) {
+			optionElement.onclick = function() {
+	            saveOptions();
+	        }
+		}
     }
 };
 
 // Link for keyboard shortcuts
 document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("extensionsLink").addEventListener("click", function() {
-		chrome.tabs.create({ url: "chrome://extensions" });
+		chrome.tabs.create({ url: "chrome://extensions/shortcuts" });
 	});
 });
