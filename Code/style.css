@@ -191,6 +191,7 @@ header a:hover h3, .userIsUsingTab header a:focus h3 {
 
 /* Banner */
 #banner {
+	display: none;
 	background-color: #FFF;
 	width: 100%;
 	box-shadow: 0 6px 8px -4px rgba(0, 0, 0, 0.1);
