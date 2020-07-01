@@ -5,9 +5,6 @@ body {
 a:focus, input:focus {
 	outline: none;
 }
-a:visited {
-	color: inherit;
-}
 * {
 	margin: 0;
 	padding: 0;
@@ -179,6 +176,9 @@ header {
 }
 header a:not(:first-child) {
 	margin-left: 50px;
+}
+header a:visited {
+	color: inherit;
 }
 header a:hover h3, .userIsUsingTab header a:focus h3 {
 	color: #FFA412;
