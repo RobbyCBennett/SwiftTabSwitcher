@@ -5,6 +5,9 @@ body {
 a:focus, input:focus {
 	outline: none;
 }
+a:visited {
+	color: inherit;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -38,17 +41,17 @@ body {
 }
 .container {
 	padding-right: 25px;
-    padding-left: 25px;
+	padding-left: 25px;
 	margin-right: auto;
 	margin-left: auto;
 }
 .box {
 	background-color: #FFF;
-    padding: 25px;
-    margin-top: 25px;
-    display: inline-block;
-    text-align: left;
-    vertical-align: top;
+	padding: 25px;
+	margin-top: 25px;
+	display: inline-block;
+	text-align: left;
+	vertical-align: top;
 	width: calc(100% - 50px);
 }
 .box, header {
@@ -195,7 +198,7 @@ header a:hover h3, .userIsUsingTab header a:focus h3 {
 	background-color: #FFF;
 	width: 100%;
 	box-shadow: 0 6px 8px -4px rgba(0, 0, 0, 0.1);
-    margin-top: -3px;
+	margin-top: -3px;
 }
 #bannerMessage {
 	max-width: 90%;

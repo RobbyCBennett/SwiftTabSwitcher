@@ -1,5 +1,5 @@
 function displayBanner() {
-	message1 = "<a href='mailto:support@codebyrob.com?Subject=Swift%20Tab%20Switcher%20-%20Support' target='_blank'>Contact me</a> about questions, feature requests, bugs, and feedback";
+	message1 = "<a href='mailto:rob@codebyrob.com?Subject=Swift%20Tab%20Switcher%20-%20Support' target='_blank'>Contact me</a> about questions, feature requests, bugs, and feedback";
 	message2 = "<a href='https://www.paypal.me/rcbennett' target='_blank'>Support me</a> with a donation";
 	message3 = "<a href='https://chrome.google.com/webstore/detail/pdncaffclfaalcafoebejjbefknohkjg/reviews' target='_blank'>Rate this extension</a> on the Chrome Web Store";
 	message4 = "<a href='https://chrome.google.com/webstore/detail/pdncaffclfaalcafoebejjbefknohkjg' target='_blank'>Share this extension</a> with others";
