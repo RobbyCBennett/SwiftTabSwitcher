@@ -70,28 +70,21 @@ a {
 	text-decoration: none;
 	display: inline-block;
 }
-a:hover {
-	transition: color 0.25s;
-}
-ipnut {
-	transition: background-color 0.25s;
+a, a > *, input, #saved {
+	transition: all 250ms;
 }
 section a:hover, #banner a:hover {
-	color: #FFC200;
+	color: #FFA412;
 }
 .userIsUsingTab section a:focus, .userIsUsingTab #banner a:focus {
 	background-color: rgba(255, 194, 0, 0.25);
 }
-input {
-	transition: border-color 0.25s;
-}
 
 section a, header .selected, #saved, #banner a {
-	color: #FFA412;
+	color: #FFC200;
 }
 #saved {
 	opacity: 0;
-	transition-duration: 0.25s;
 }
 #saved img {
 	margin-left: 25px;
@@ -180,7 +173,7 @@ header a:not(:first-child) {
 header a:visited {
 	color: inherit;
 }
-header a:hover h3, .userIsUsingTab header a:focus h3 {
+header a:hover > *:not(.selected), .userIsUsingTab header a:focus > *:not(.selected) {
 	color: #FFA412;
 }
 .horizontalScrolling {
@@ -211,7 +204,6 @@ header a:hover h3, .userIsUsingTab header a:focus h3 {
 	float: right;
 	background-color: transparent;
 	background-image: url(closeDark.svg);
-	transition-duration: 0.25s;
 	border-width: initial;
 	border-style: none;
 	border-color: initial;
