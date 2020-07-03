@@ -9,38 +9,21 @@ a:focus, input:focus {
 	margin: 0;
 	padding: 0;
 }
-
-
-
-/* Scrollbar */
-::-webkit-scrollbar-thumb {
-	background: #ffc200;
-	border-radius: 5px;
-}
-::-webkit-scrollbar-button {
-	background-color: transparent;
-	height: 0px;
-	width: 0px;
-}
 ::-webkit-scrollbar {
-	background-color: transparent;
-	height: 5px;
-	width: 5px;
+	display: none;
 }
 
 
 
-/* General */
-body {
-	background-color: #FCFCFC;
-	color: #515151;
-	font-family: "Raleway", sans-serif;
-}
+/* Custom Bootstrap */
 .container {
 	padding-right: 25px;
 	padding-left: 25px;
 	margin-right: auto;
 	margin-left: auto;
+}
+section .container {
+	padding-bottom: 25px;
 }
 .box {
 	background-color: #FFF;
@@ -59,12 +42,21 @@ body {
 	justify-content: space-between;
 }
 .fixedContainer {
-	width: 800px;
+	width: 850px;
 }
-@media (min-width: 900px){
+@media (min-width: 900px) {
 	.container {
-		max-width: 750px;
+		max-width: 850px;
 	}
+}
+
+
+
+/* General */
+body {
+	background-color: #FCFCFC;
+	color: #515151;
+	font-family: "Raleway", sans-serif;
 }
 a {
 	text-decoration: none;
@@ -84,6 +76,7 @@ section a, header .selected, #saved, #banner a {
 	color: #FFC200;
 }
 #saved {
+	margin-top: 25px;
 	opacity: 0;
 }
 #saved img {
@@ -194,7 +187,7 @@ header a:hover > *:not(.selected), .userIsUsingTab header a:focus > *:not(.selec
 	margin-top: -3px;
 }
 #bannerMessage {
-	max-width: 90%;
+	max-width: calc(100% - 44px);
 	margin: 10px 0;
 }
 .close {

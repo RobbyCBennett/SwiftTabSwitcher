@@ -3,5 +3,5 @@ function animateSaved() {
 	saved.style.opacity = 1;
 	setTimeout(function() {
 		saved.style.opacity = 0;
-	}, 750);
+	}, 2000);
 }

@@ -10,20 +10,30 @@ function displayBanner() {
 
 	if (num == 1) {
 		document.getElementById("bannerMessage").innerHTML = message1;
-		document.styleSheets[0].addRule("#banner", "display: block");
 	}
 	else if (num == 2) {
 		document.getElementById("bannerMessage").innerHTML = message2;
-		document.styleSheets[0].addRule("#banner", "display: block");
 	}
 	else if (num == 3) {
 		document.getElementById("bannerMessage").innerHTML = message3;
-		document.styleSheets[0].addRule("#banner", "display: block");
 	}
 	else if (num == 4) {
 		document.getElementById("bannerMessage").innerHTML = message4;
-		document.styleSheets[0].addRule("#banner", "display: block");
 	}
+
+	// First time message
+	firstTimeMessage = "Thanks for installing my extension!";
+
+	chrome.storage.sync.get(null,
+		function (values) {
+			if (!values.firstTime) {
+				document.getElementById("bannerMessage").innerHTML = firstTimeMessage;
+				chrome.storage.sync.set({ firstTime: true });
+			}
+		}
+	);
+
+	document.styleSheets[0].addRule("#banner", "display: block");
 }
 
 displayBanner();
