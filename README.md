@@ -1,11 +1,8 @@
 # Swift Tab Switcher
 
-![Options](screenshots/options.png)
-![Support](screenshots/support.png)
+## Install
 
-## Free Extension
-
-https://chrome.google.com/webstore/detail/swift-tab-switcher/pdncaffclfaalcafoebejjbefknohkjg
+[Chrome Web Store](https://chrome.google.com/webstore/detail/swift-tab-switcher/pdncaffclfaalcafoebejjbefknohkjg)
 
 ## Introduction
 
@@ -13,18 +10,13 @@ Use shortcuts to quickly switch your current tab. Tired of clicking on your tabs
 
 ## Features
 
-###### Tab Switching
-* Using any keyboard shortcuts supported by Chrome.
+Tab Switching
+* Using any keyboard shortcuts supported by the browser
 
-###### Settings
-* Skip to and from the first and last tabs
-* Enable dual window support
+Options
+* Skip collapsed tab groups
+* Switch across windows
+* Wrap to first and last tabs
 
-###### Chrome Sync
-* Saves your options for use on any computer.
-
-## Technologies
-
-###### Frontend:
-* JavaScript
-* [Chrome Extension API](https://developer.chrome.com/docs/extensions/reference/)
+Storage Sync
+* Options saved for use on any computer
