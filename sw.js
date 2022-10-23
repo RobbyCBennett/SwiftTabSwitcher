@@ -53,11 +53,31 @@ setDefaults();
 // Tab switching
 async function switchTab(command) {
 	// Get options, windows with tabs, & collapsed groups
-	const [options, windows, collapsedGroups] = await Promise.all([
+	let [options, windows, collapsedGroups] = await Promise.allSettled([
 		chrome.storage.sync.get(),
 		chrome.windows.getAll({ populate: true }),
 		chrome.tabGroups.query({ collapsed: true }),
 	]);
+
+	// Get values from fulfilled promises
+	options = options.value;
+	windows = windows.value;
+	if (collapsedGroups.status == 'fulfilled') {
+		collapsedGroups = collapsedGroups.value;
+	}
+
+	// If a PWA was open, get the collapsed groups using each other window id
+	else {
+		collapsedGroups = [];
+		if (options.skipCollapsed) {
+			collapsedGroups = [];
+			for (const window of windows) {
+				if (window.type == 'app') continue;
+				collapsedGroups.push(chrome.tabGroups.query({ windowId: window.id, collapsed: true }));
+			}
+			collapsedGroups = (await Promise.all(collapsedGroups)).flat();
+		}
+	}
 
 	// Sort windows according to horizontal position
 	windows.sort((a, b) => a.left - b.left);
