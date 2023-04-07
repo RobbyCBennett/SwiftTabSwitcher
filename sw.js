@@ -15,7 +15,7 @@ async function setDefaults() {
 	// Get keys of bad options
 	const removingOptions = [];
 	for (const key of Object.keys(currentOptions)) {
-		if (! (key in defaultOptions)) {
+		if (!(key in defaultOptions)) {
 			removingOptions.push(key);
 		}
 	}
@@ -51,65 +51,49 @@ setDefaults();
 
 
 // Tab switching
+const collapsedGroupIds = new Set();
 async function switchTab(command) {
 	// Get options, windows with tabs, & collapsed groups
-	let [options, windows, collapsedGroups] = await Promise.allSettled([
+	const [options, windows, collapsedGroups] = await Promise.all([
 		chrome.storage.sync.get(),
 		chrome.windows.getAll({ populate: true }),
 		chrome.tabGroups.query({ collapsed: true }),
 	]);
 
-	// Get values from fulfilled promises
-	options = options.value;
-	windows = windows.value;
-	if (collapsedGroups.status == 'fulfilled') {
-		collapsedGroups = collapsedGroups.value;
-	}
-
-	// If a PWA was open, get the collapsed groups using each other window id
-	else {
-		collapsedGroups = [];
-		if (options.skipCollapsed) {
-			collapsedGroups = [];
-			for (const window of windows) {
-				if (window.type == 'app') continue;
-				collapsedGroups.push(chrome.tabGroups.query({ windowId: window.id, collapsed: true }));
-			}
-			collapsedGroups = (await Promise.all(collapsedGroups)).flat();
-		}
-	}
-
 	// Sort windows according to horizontal position
-	windows.sort((a, b) => a.left - b.left);
+	if (windows.length)
+		windows.sort((a, b) => a.left - b.left);
 
 	// Get all collapsed group ids
-	const collapsedGroupIds = {};
-	for (const group of collapsedGroups) {
-		collapsedGroupIds[group.id] = true;
-	}
+	for (let i = 0; i < collapsedGroups.length; i++)
+		collapsedGroupIds.add(collapsedGroups[i].id);
 
 	// Make a continuous array of only some tabs
 	const tabs = [];
 	let currentIndex = null;
+	// Each window
 	for (let i = 0; i < windows.length; i++) {
 		const window = windows[i];
 
 		// Filter out minimized windows
-		if (window.state == 'minimized') continue;
+		if (window.state === 'minimized')
+			continue;
 
 		// Filter out other windows if window-switching option is disabled
-		if (! options.switchWindows && ! window.focused) continue;
+		if (!options.switchWindows && !window.focused)
+			continue;
 
+		// Each tab
 		for (let j = 0; j < window.tabs.length; j++) {
 			const tab = window.tabs[j];
 
 			// Filter out tabs in collapsed groups
-			if (options.skipCollapsed && tab.groupId in collapsedGroupIds) continue;
+			if (options.skipCollapsed && collapsedGroupIds.has(tab.groupId))
+				continue;
 
 			// Remember where the current tab is in the array
-			if (window.focused && tab.active) {
+			if (window.focused && tab.active)
 				currentIndex = tabs.length;
-			}
 
 			// Push important tab info to array
 			tabs.push({
@@ -120,25 +104,26 @@ async function switchTab(command) {
 	}
 
 	// Skip if there is no current tab, like in DevTools
-	if (currentIndex == null) return;
+	if (currentIndex === null)
+		return;
 
 	// Change the index
-	let newIndex = currentIndex + ((command == 'leftTab') ? -1 : 1);
-	if (newIndex < 0) {
+	let newIndex = currentIndex + ((command === 'leftTab') ? -1 : 1);
+	if (newIndex < 0)
 		newIndex = (options.wrapFirstLast) ? (tabs.length - 1) : 0;
-	}
-	else if (newIndex >= tabs.length) {
+	else if (newIndex >= tabs.length)
 		newIndex = (options.wrapFirstLast) ? 0 : (tabs.length - 1);
-	}
 
 	// Get id for new window & new tab
 	const windowId = tabs[newIndex].windowId;
 	const tabId = tabs[newIndex].tabId;
 
 	// Switch window & tab
-	if (windowId) {
+	if (windowId)
 		await chrome.windows.update(windowId, {focused: true});
-	}
 	chrome.tabs.update(tabId, {active: true});
+
+	// Clear all collapsed group ids
+	collapsedGroupIds.clear();
 }
 chrome.commands.onCommand.addListener(switchTab);
